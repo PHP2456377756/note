@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新闻管理中心</title>
+<script type="text/javascript">
+//定义JS删除的函数
+function confirmDel(id){
+	//询问是否要删除
+	if(window.confirm("你真的要删除吗？")){
+		//单击"确定"跳转到index.php，但传递a=del用户动作参数
+		location.href = "?c=News&a=del&id="+id;
+	}
+}
+</script>
+</head>
+
+<body>
+<!--简单导航栏-->
+<a href="?c=Student&a=index">学生管理</a> | 
+<a href="?c=News&a=index">新闻管理</a>
+<hr>
+
+<div style="text-align:center;padding-bottom:10px;">
+	<h2>新闻信息管理中心</h2>
+	<a href="javascript:void(0)">添加新闻</a> 
+	共有<font color="red">250</font>条记录
+</div>
+
+<table border="1" bordercolor="#ccc" width="1000" align="center" rules="all" cellpadding="5">
+	<tr bgcolor="#f0f0f0">
+		<th>编号</th>
+		<th>标题</th>
+		<th>作者</th>
+		<th>点击率</th>
+		<th>发布时间</th>
+		<th>操作选项</th>
+	</tr>
+	<?php
+	//循环输出新闻信息数组
+	foreach($arr as $value){
+	?>
+	<tr align="center">
+		<td><?php echo $value['nid']?></td>
+		<td align="left"><?php echo $value['title']?></td>
+		<td><?php echo $value['author']?></td>
+		<td><?php echo $value['hits']?></td>
+		<td><?php echo date("Y-m-d H:i",$value['addate'])?></td>
+		<td>
+			<a href="javascript:void(0)">修改</a> | 
+			<a href="javascript:void(0)" onClick="confirmDel(<?php echo $value['nid']?>)">删除</a>
+		</td>
+	</tr>
+	<?php }?>
+</table>
+
+</body>
+</html>

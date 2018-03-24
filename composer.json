@@ -1,0 +1,40 @@
+{
+  "name": "sh_server/xphalcon",
+  "description": "phalcon框架扩展",
+  "keywords": [
+    "xphalcon",
+    "xredis",
+    "ssdb",
+    "postgres"
+  ],
+  "homepage": "http://git.365yf.com/sh_server/xphalcon",
+  "type": "library",
+  "license": "MIT",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "chen shen",
+      "email": "13184218@qq.com",
+      "homepage": "http://git.365yf.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "init.php"
+    ]
+  },
+  "require": {
+    "monolog/monolog": "1.12.*@dev",
+    "qiniu/php-sdk": "*",
+    "nategood/httpful": "*",
+    "johnlui/aliyun-oss": "*",
+    "phpoffice/phpexcel": "^1.8",
+    "textalk/websocket": "^1.2",
+    "aliyuncs/oss-sdk-php": "~2.0",
+    "endroid/qrcode": "2.0.10",
+    "phpmailer/phpmailer": "~5.2",
+    "stephenhill/base58": "~1.0"
+  }
+
+}
+
